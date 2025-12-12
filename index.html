@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Encodage de caractères UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Configuration de la fenêtre d'affichage pour la réactivité mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importation du fichier JavaScript principal -->
     <script src="Utils/main.js"></script>
+    <!-- Importation de la feuille de styles CSS -->
     <link rel="stylesheet" href="Utils/main.css">
-    <title>Manga Store</title>
+    <!-- Icône de favicon affichée dans l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="Img/logo.png">
+    <!-- Titre de la page affichée dans l'onglet -->
+    <title>Sukumanga</title>
 </head>
 <body>
-    <!--  EN-TÊTE  -->
+    <!-- EN-TÊTE PRINCIPALE DE LA PAGE -->
     <div class="header">
+        <!-- Conteneur du logo et de la navigation -->
         <div class="logo">
-            <div class="logo-img"></div>
+            <!-- Image du logo cliquable pour retourner à l'accueil -->
+            <div class="logo-img" onclick="showPage('home')"></div>
             <!-- Menu de navigation principal -->
             <nav>
                 <ul class="nav-links">
+                    <!-- Lien vers la page d'accueil -->
                     <li><a href="#" onclick="showPage('home')">Accueil</a></li>
+                    <!-- Lien vers la page d'exploration des mangas -->
                     <li><a href="#" onclick="showPage('explore')">Explorer</a></li>
+                    <!-- Lien vers la page À Propos -->
                     <li><a href="#" onclick="showPage('about')">A Propos</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- Fonctionnalite de recherche -->
+        <!-- Barre de recherche pour chercher des mangas -->
         <div class="search-box">
             <input type="text" placeholder="Rechercher un manga...">
             <span>🔍</span>
         </div>
-        <!-- Le bouton de connexion declenche le modal -->
+        <!-- Bouton de connexion qui déclenche la modale de connexion -->
         <button class="connection-btn" onclick="openModal('login')">Connexion</button>
     </div>
 
-    <!--  PAGE D'ACCUEIL  -->
+    <!-- PAGE D'ACCUEIL -->
     <div id="homePage" class="page">
         <div class="container">
-            <!-- Section Populaire Aujourd'hui -->
+            <!-- Section des mangas populaires aujourd'hui -->
             <div class="section-title">
                 <h2>Populaire Aujourd'hui</h2>
             </div>
-            <!-- Grille de cartes de manga populaires -->
+            <!-- Grille de cartes de manga populaires (5 colonnes) -->
             <div class="manga-grid">
+                <!-- Carte de manga 1 - Tokyo Revenger -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover">
                         <img src="Img/tokyorevenger.png" alt="Tokyo Revenger">
@@ -52,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte de manga 2 - One Piece -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <img src="Img/onepiece.png" alt="One Piece" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -65,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte de manga 3 - Jujutsu Kaisen -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <img src="Img/jujutsukaisen.png" alt="Jujutsu Kaisen" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -78,6 +93,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte de manga 4 - L'attaque des titans -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                         <img src="Img/attackontitan.png" alt="L'attaque des titans" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -91,6 +107,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte de manga 5 - Dr Stone -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                         <img src="Img/drstone.png" alt="Dr stone" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -106,19 +123,22 @@
                 </div>
             </div>
 
-            <!-- Section Dernières Sorties -->
+            <!-- Section des dernières sorties de mangas -->
             <div class="section-title">
                 <h2>Nos dernières sorties</h2>
+                <!-- Bouton pour voir tous les mangas récemment publiés -->
                 <button class="view-all-btn">Tout Voir</button>
             </div>
-            <!-- Grille de series recemment publiees -->
+            <!-- Grille de séries récemment publiées (2 colonnes) -->
             <div class="new-series-grid">
+                <!-- Carte de série 1 - Bleach -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover">
                         <img src="Img/bleach.png" alt="Bleach">
                     </div>
                     <div class="series-info">
                         <div class="series-title">Bleach</div>
+                        <!-- Liste des derniers chapitres disponibles -->
                         <ul class="series-chapters">
                             <li>⬇ Chapitre 686</li>
                             <li>⬇ Chapitre 685</li>
@@ -128,6 +148,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 2 - Blue-lock -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
                         <img src="Img/bluelock.png" alt="Blue-lock" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -143,6 +164,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 3 - Hunter×Hunter -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
                         <img src="Img/hxh.png" alt="Hunter×Hunter" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -158,6 +180,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 4 - Naruto -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
                         <img src="Img/naruto.png" alt="Naruto" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -173,6 +196,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 5 - Demon Slayer -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <img src="Img/demonslayer.png" alt="Demon Slayer" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -188,6 +212,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 6 - Boruto -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <img src="Img/boruto.png" alt="Boruto" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -203,6 +228,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 7 - Dragon Ball Z -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <img src="Img/dbz.png" alt="Dragon Ball Z" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -218,6 +244,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Carte de série 8 - Tokyo Ghoul -->
                 <div class="series-card" onclick="showPage('detail')">
                     <div class="series-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                         <img src="Img/tokyoghoul.png" alt="Tokyo Ghoul" style="width:120px;height:180px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -236,10 +263,10 @@
             </div>
         </div>
 
-        <!-- Barre laterale - position fixe a droite -->
+        <!-- Barre latérale fixe affichant les mangas populaires -->
         <div class="popular-sidebar">
             <div class="sidebar-title">Populaire</div>
-            <!-- elements de manga populaires affiches dans la barre laterale -->
+            <!-- Élément manga populaire 1 - SlamDunk -->
             <div class="sidebar-manga">
                 <div class="sidebar-manga-cover">
                     <img src="Img/slamdunk.png" alt="SlamDunk">
@@ -252,6 +279,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Élément manga populaire 2 - DanDan Dan -->
             <div class="sidebar-manga">
                 <div class="sidebar-manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                     <img src="Img/dandadan.png" alt="DanDan Dan" style="width:60px;height:90px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -264,6 +292,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Élément manga populaire 3 - Gachakuta -->
             <div class="sidebar-manga">
                 <div class="sidebar-manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                     <img src="Img/gachiakuta.png" alt="Gachakuta" style="width:60px;height:90px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -276,6 +305,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Élément manga populaire 4 - The SDS -->
             <div class="sidebar-manga">
                 <div class="sidebar-manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                     <img src="Img/sds.png" alt="The SDS" style="width:60px;height:90px;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -291,63 +321,84 @@
         </div>
     </div>
 
-    <!-- Page a Propos -->
+    <!-- PAGE À PROPOS -->
     <div id="aboutPage" class="page page-hidden">
         <div class="container">
-            <div class="about-title">a Propos de BoutiqueManga</div>
+            <!-- Titre de la section À Propos -->
+            <div class="about-title">a Propos de Sukumanga</div>
+            <!-- Contenu descriptif de Sukumanga -->
             <div class="about-content">
-                <p><strong>BoutiqueManga</strong> est une boutique en ligne dediee aux passionnes de mangas, proposant un vaste catalogue de mangas japonais et autres originaux derives. Notre mission est de rendre accessible aux lecteurs les meilleures œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa.</p>
+                <p><strong>Sukumanga</strong> est une boutique en ligne dediee aux passionnes de mangas, proposant un vaste catalogue de mangas japonais et autres originaux derives. Notre mission est de rendre accessible aux lecteurs les meilleures œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa.</p>
                 <br>
                 <p>Nous offrons non seulement un large choix de mangas actuels et classiques, mais aussi une communaute où les fans peuvent decouvrir, collectionner et partager leurs passions du manga. Que vous soyez un lecteur occasionnel ou un collectionneur passionne, nous proposons un catalogue diversifie adapte a tous les goûts et a tous les âges.</p>
                 <br>
-                <p>Decouvrez les œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa. <strong>BoutiqueManga</strong> s'efforce de vous fournir un reseau de distribution et une experience de lecture exceptionnelle.</p>
+                <p>Decouvrez les œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa. <strong>Sukumanga</strong> s'efforce de vous fournir un reseau de distribution et une experience de lecture exceptionnelle.</p>
             </div>
 
+            <!-- Titre de la section Politique de Confidentialité -->
             <div class="about-title">Politique de Confidentialite</div>
+            <!-- Contenu de la politique de confidentialité -->
             <div class="about-content">
-                <p>Chez <strong>BoutiqueManga</strong>, nous valorisons profondement la confidentialite de nos membres et utilisateurs. <strong>Nous ne partageons jamais vos informations personnelles</strong> incluant votre nom, adresse e-mail, et autres donnees collectees durant votre navigation sur https://boutiquemanga.net/, nous vous permettons de gerer les informations necessaires pour traiter votre commande, personnaliser votre experience d'achat, et vous informer des nouvelles sorties.</p>
+                <p>Chez <strong>Sukumanga</strong>, nous valorisons profondement la confidentialite de nos membres et utilisateurs. <strong>Nous ne partageons jamais vos informations personnelles</strong> incluant votre nom, adresse e-mail, et autres donnees collectees durant votre navigation sur https://Sukumanga.net/, nous vous permettons de gerer les informations necessaires pour traiter votre commande, personnaliser votre experience d'achat, et vous informer des nouvelles sorties.</p>
                 <br>
-                <p>Lors de votre navigation sur <strong>https://boutiquemanga.net/</strong>, nous utilisons des technologies comme les cookies pour ameliorer votre experience et vous fournir un service optimal.</p>
+                <p>Lors de votre navigation sur <strong>https://Sukumanga.net/</strong>, nous utilisons des technologies comme les cookies pour ameliorer votre experience et vous fournir un service optimal.</p>
             </div>
 
+            <!-- Titre de la section Comment ça a commencé -->
             <div class="about-title">Comment sa a commencer</div>
+            <!-- Section avec vidéo YouTube intégrée -->
             <div class="about-content">
-                <p>Decouvrer l'histoire derierre BoutiqueManga et comment notre passion pour le manga a commencer</p>
+                <p>Decouvrer l'histoire derierre Sukumanga et comment notre passion pour le manga a commencer</p>
                 <div style="margin-top: 20px; text-align: center;">
+                    <!-- Lecteur vidéo YouTube intégré -->
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 
+            <!-- Titre de la section Notre Emplacement -->
             <div class="about-title">Notre Emplacement</div>
+            <!-- Section avec Google Maps intégré -->
             <div class="about-content">
                 <p>Visiter nous ou trouver otre location sur la map</p>
                 <div style="margin-top: 20px; text-align: center;">
+                    <!-- Carte Google Maps intégrée -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914341945747!2d2.3521!3d48.8566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890" width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
+            <!-- Titre de la section Contact -->
             <div class="about-title">Contact</div>
+            <!-- Pied de page avec icônes de réseaux sociaux -->
             <div class="footer">
                 <div class="social-icons">
+                    <!-- Icône Instagram -->
                     <div class="social-icon">📷</div>
+                    <!-- Icône Message/Chat -->
                     <div class="social-icon">💬</div>
+                    <!-- Icône TikTok/Musique -->
                     <div class="social-icon">🎵</div>
+                    <!-- Icône Facebook/Like -->
                     <div class="social-icon">👍</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Page Explorer -->
+    <!-- PAGE EXPLORER -->
     <div id="explorePage" class="page page-hidden">
         <div class="container">
+            <!-- Titre de la section Explorer -->
             <div class="section-title">
                 <h2>Explorer</h2>
             </div>
+            <!-- Section de filtrage des mangas -->
             <div class="filter-section">
+                <!-- Bouton pour ouvrir les options de filtrage -->
                 <button class="filter-btn">Filtrer ▼</button>
             </div>
+            <!-- Grille complète de tous les mangas disponibles -->
             <div class="manga-grid">
+                <!-- Carte 1 - Tokyo Revenger -->
                 <div class="manga-card" onclick="showPage('detail')">
                     <div class="manga-cover">
                         <img src="Img/tokyorevenger.png" alt="Tokyo Revenger">
@@ -361,6 +412,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 2 - One Piece -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <img src="Img/onepiece.png" alt="One Piece" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -374,6 +426,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 3 - Jujutsu Kaisen -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <img src="Img/jujutsukaisen.png" alt="Jujutsu Kaisen" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -387,6 +440,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 4 - L'attaque des titans -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                         <img src="Img/attackontitan.png" alt="L'attaque des titans" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -400,6 +454,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 5 - Dr Stone -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                         <img src="Img/drstone.png" alt="Dr stone" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -413,6 +468,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 6 - Bleach -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
                         <img src="Img/bleach.png" alt="Bleach" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -426,6 +482,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 7 - Hunter×Hunter -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
                         <img src="Img/hxh.png" alt="Hunter×Hunter" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -439,6 +496,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 8 - Blue Lock -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
                         <img src="Img/bluelock.png" alt="Bluelock" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -452,6 +510,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 9 - Naruto -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <img src="Img/naruto.png" alt="Naruto" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -465,6 +524,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 10 - Gachakuta -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <img src="Img/gachiakuta.png" alt="Gachakuta" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -478,6 +538,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 11 - Demon Slayer -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <img src="Img/demonslayer.png" alt="Demon Slayer" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -491,6 +552,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 12 - The SDS -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                         <img src="Img/sds.png" alt="The SDS" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -504,6 +566,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 13 - SlamDunk -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                         <img src="Img/slamdunk.png" alt="SlamDunk" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -517,6 +580,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 14 - Tokyo Ghoul -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
                         <img src="Img/tokyoghoul.png" alt="Tokyo Ghoul" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -530,6 +594,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carte 15 - Boruto -->
                 <div class="manga-card">
                     <div class="manga-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
                         <img src="Img/boruto.png" alt="Boruto" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
@@ -547,304 +612,64 @@
         </div>
     </div>
 
-    <!-- Page a Propos -->
-    <div id="aboutPage" class="page page-hidden">
-        <div class="container">
-            <div class="about-title">a Propos de BoutiqueManga</div>
-            <div class="about-content">
-                <p><strong>BoutiqueManga</strong> est une boutique en ligne dediee aux passionnes de mangas, proposant un vaste catalogue de mangas japonais et autres originaux derives. Notre mission est de rendre accessible aux lecteurs les meilleures œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa.</p>
-                <br>
-                <p>Nous offrons non seulement un large choix de mangas actuels et classiques, mais aussi une communaute où les fans peuvent decouvrir, collectionner et partager leurs passions du manga. Que vous soyez un lecteur occasionnel ou un collectionneur passionne, nous proposons un catalogue diversifie adapte a tous les goûts et a tous les âges.</p>
-                <br>
-                <p>Decouvrez les œuvres de maîtres comme Osamu Tezuka, Akira Toriyama, et Naoki Urasawa. <strong>BoutiqueManga</strong> s'efforce de vous fournir un reseau de distribution et une experience de lecture exceptionnelle.</p>
-            </div>
-
-            <div class="about-title">Politique de Confidentialite</div>
-            <div class="about-content">
-                <p>Chez <strong>BoutiqueManga</strong>, nous valorisons profondement la confidentialite de nos membres et utilisateurs. <strong>Nous ne partageons jamais vos informations personnelles</strong> incluant votre nom, adresse e-mail, et autres donnees collectees durant votre navigation sur https://boutiquemanga.net/, nous vous permettons de gerer les informations necessaires pour traiter votre commande, personnaliser votre experience d'achat, et vous informer des nouvelles sorties.</p>
-                <br>
-                <p>Lors de votre navigation sur <strong>https://boutiquemanga.net/</strong>, nous utilisons des technologies comme les cookies pour ameliorer votre experience et vous fournir un service optimal.</p>
-            </div>
-
-            <div class="about-title">How it started</div>
-            <div class="about-content">
-                <p>Discover the story behind BoutiqueManga and how our passion for manga began:</p>
-                <div style="margin-top: 20px; text-align: center;">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="about-title">Where we're situated</div>
-            <div class="about-content">
-                <p>Visit us or find our location on the map:</p>
-                <div style="margin-top: 20px; text-align: center;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914341945747!2d2.3521!3d48.8566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890" width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-            <div class="about-title">Contacts</div>
-            <div class="footer">
-                <div class="social-icons">
-                    <div class="social-icon">📷</div>
-                    <div class="social-icon">💬</div>
-                    <div class="social-icon">🎵</div>
-                    <div class="social-icon">👍</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Page Explorer -->
-    <div id="explorePage" class="page page-hidden">
-        <div class="container">
-            <div class="section-title">
-                <h2>Explorer</h2>
-            </div>
-            <div class="filter-section">
-                <button class="filter-btn">Filtrer ▼</button>
-            </div>
-            <div class="manga-grid">
-                <div class="manga-card" onclick="showPage('detail')">
-                    <div class="manga-cover">
-                        <img src="Img/tokyorevenger.png" alt="Tokyo Revenger">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Tokyo Revenger</div>
-                        <div class="manga-chapter">Chapitre 245</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <img src="Img/onepiece.png" alt="One Piece" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">One Piece</div>
-                        <div class="manga-chapter">Chapitre 1099</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.9</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <img src="Img/jujutsukaisen.png" alt="Jujutsu Kaisen" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Jujutsu Kaisen</div>
-                        <div class="manga-chapter">Chapitre 245</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <img src="Img/attackontitan.png" alt="L'attaque des titans" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">L'attaque des titans</div>
-                        <div class="manga-chapter">Chapitre 139</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.9</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <img src="Img/drstone.png" alt="Dr stone" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Dr stone</div>
-                        <div class="manga-chapter">Chapitre 232</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.6</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <img src="Img/bleach.png" alt="Bleach" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Bleach</div>
-                        <div class="manga-chapter">Chapitre 686</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-                        <img src="Img/hxh.png" alt="Hunter×Hunter" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Hunter×Hunter</div>
-                        <div class="manga-chapter">Chapitre 400</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.9</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
-                        <img src="Img/bluelock.png" alt="Bluelock" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Bluelock</div>
-                        <div class="manga-chapter">Chapitre 250</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <img src="Img/naruto.png" alt="Naruto" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Naruto</div>
-                        <div class="manga-chapter">Chapitre 700</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.9</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <img src="Img/gachiakuta.png" alt="Gachakuta" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Gachakuta</div>
-                        <div class="manga-chapter">Chapitre 56</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <img src="Img/demonslayer.png" alt="Demon Slayer" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Demon Slayer</div>
-                        <div class="manga-chapter">Chapitre 205</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.9</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <img src="Img/sds.png" alt="The SDS" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">The SDS</div>
-                        <div class="manga-chapter">Chapitre 346</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <img src="Img/slamdunk.png" alt="SlamDunk" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">SlamDunk</div>
-                        <div class="manga-chapter">Chapitre 276</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <img src="Img/tokyoghoul.png" alt="Tokyo Ghoul" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Tokyo Ghoul</div>
-                        <div class="manga-chapter">Chapitre 179</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-                        <img src="Img/boruto.png" alt="Boruto" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-                    </div>
-                    <div class="manga-info">
-                        <div class="manga-title">Boruto</div>
-                        <div class="manga-chapter">Chapitre 80</div>
-                        <div class="manga-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span>4.6</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Page Detail -->
+    <!-- PAGE DE DÉTAIL DU MANGA -->
     <div id="detailPage" class="page page-hidden">
         <div class="container">
+            <!-- Conteneur principal avec la couverture et les infos du manga -->
             <div class="detail-container">
+                <!-- Couverture du manga -->
                 <div class="detail-cover">
                     <img src="Img/slamdunk.png" alt="Slam Dunk">
                 </div>
+                <!-- Informations détaillées du manga -->
                 <div class="detail-info">
+                    <!-- Titre principal du manga -->
                     <div class="detail-title">Slam Dunk</div>
+                    <!-- Sous-titre avec le sous-titre du manga -->
                     <div class="detail-subtitle">Slam Dunk - La Passion du Basketball</div>
+                    <!-- Description complète du manga -->
                     <div class="detail-description">
                         Slam Dunk suit l'histoire d'Hanamichi Sakuragi, un lyceen delinquant de 16 ans qui tombe rapidement amoureux d'une jeune fille du lycee, Haruko Akagi. Pour l'impressionner, il decide de rejoindre l'equipe de basketball de son lycee. a travers des matchs palpitants et son parcours personnel, il decouvre sa veritable passion pour le basketball.
                     </div>
+                    <!-- Grille d'informations métadonnées du manga -->
                     <div class="detail-meta">
+                        <!-- Champ Scénariste -->
                         <div class="meta-item">
                             <div class="meta-label">Scenariste</div>
                             <div>Auteur</div>
                         </div>
+                        <!-- Champ Auteur -->
                         <div class="meta-item">
                             <div class="meta-label">Auteur</div>
                             <div>Takehiko Inoue (井上雄彦)</div>
                         </div>
+                        <!-- Champ Artiste -->
                         <div class="meta-item">
                             <div class="meta-label">Artiste</div>
                             <div>Shueisha's Shonuzawa Toei Animation</div>
                         </div>
+                        <!-- Champ Date de Publication -->
                         <div class="meta-item">
                             <div class="meta-label">Date de Publication</div>
                             <div>Le 20 Septembre 2033</div>
                         </div>
                     </div>
-                    <button class="follow-btn">❤️ Suivre</button>
+                    <!-- Bouton pour suivre le manga -->
+                    <button class="follow-btn">Suivre</button>
+                    <!-- Informations supplémentaires (statut et genre) -->
                     <div class="detail-meta">
+                        <!-- Champ Statut -->
                         <div class="meta-item">
                             <div class="meta-label">Statut</div>
                             <div>En cours</div>
                         </div>
+                        <!-- Champ Genre -->
                         <div class="meta-item">
                             <div class="meta-label">Genre</div>
                             <div>Sport</div>
                         </div>
                     </div>
+                    <!-- Tags/Étiquettes descriptives du manga -->
                     <div class="tags">
                         <span class="tag">Sport</span>
                         <span class="tag">Comedie</span>
@@ -855,6 +680,7 @@
                         <span class="tag">Travail d'equipe</span>
                         <span class="tag">Intense</span>
                     </div>
+                    <!-- Type de contenu -->
                     <div class="detail-meta">
                         <div class="meta-item">
                             <div class="meta-label">Type</div>
@@ -864,25 +690,33 @@
                 </div>
             </div>
 
+            <!-- Section des chapitres disponibles -->
             <div class="chapters-section">
                 <h2 style="margin-bottom: 20px;">Chapitres</h2>
+                <!-- En-tête avec boutons de navigation -->
                 <div class="chapters-header">
+                    <!-- Bouton pour aller au premier chapitre -->
                     <button class="chapter-btn">Premier Chapitre<br>Chapitre 1</button>
+                    <!-- Bouton pour aller au dernier chapitre -->
                     <button class="chapter-btn">Dernier Chapitre<br>Chapitre 107</button>
                 </div>
+                <!-- Liste de tous les chapitres disponibles -->
                 <ul class="chapter-list">
+                    <!-- Élément chapitre 107 -->
                     <li class="chapter-item">
                         <div>
                             <strong>Chapitre 107</strong><br>
                             <span style="color: #888; font-size: 12px;">Le 20 Septembre 2033</span>
                         </div>
                     </li>
+                    <!-- Élément chapitre 106 -->
                     <li class="chapter-item">
                         <div>
                             <strong>Chapitre 106</strong><br>
                             <span style="color: #888; font-size: 12px;">Le 13 Septembre 2033</span>
                         </div>
                     </li>
+                    <!-- Élément chapitre 105 -->
                     <li class="chapter-item">
                         <div>
                             <strong>Chapitre 105</strong><br>
@@ -894,54 +728,79 @@
         </div>
     </div>
 
-    <!-- Modal Connexion -->
+    <!-- MODALE DE CONNEXION -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <div class="modal-logo"></div>
-            <div class="modal-title">Boutique Manga</div>
+            <!-- Logo de la modale -->
+            <div class="modal-logo">
+                <div class="logo-img"></div>
+            </div>
+            <!-- Titre de la modale -->
+            <div class="modal-title">Sukumanga</div>
+            <!-- Sous-titre de la modale -->
             <div class="modal-subtitle">Connectez-vous a votre compte</div>
+            <!-- Formulaire de connexion -->
             <form>
+                <!-- Champ nom d'utilisateur -->
                 <div class="form-group">
                     <input type="text" placeholder="📧 Nom d'utilisateur">
                 </div>
+                <!-- Champ mot de passe -->
                 <div class="form-group">
                     <input type="password" placeholder="🔒 Mot de passe">
                 </div>
+                <!-- Options du formulaire (se souvenir et mot de passe oublié) -->
                 <div class="form-options">
+                    <!-- Case à cocher "Se souvenir" -->
                     <label>
                         <input type="checkbox"> Se souvenir?
                     </label>
+                    <!-- Lien "Mot de passe oublié" -->
                     <a href="#" style="color: #e74c3c; text-decoration: none;">Mot de passe oublie?</a>
                 </div>
+                <!-- Bouton de soumission du formulaire -->
                 <button type="button" class="submit-btn" onclick="closeModal()">Connexion</button>
             </form>
+            <!-- Lien pour basculer vers l'inscription -->
             <div class="switch-form">
                 Pas membre? <a href="#" onclick="switchToRegister()">Creer un nouveau compte!</a>
             </div>
         </div>
     </div>
 
-    <!-- Modal Inscription -->
+    <!-- MODALE D'INSCRIPTION -->
     <div id="registerModal" class="modal">
         <div class="modal-content">
-            <div class="modal-logo"></div>
-            <div class="modal-title">Boutique Manga</div>
+            <!-- Logo de la modale -->
+            <div class="modal-logo">
+                <div class="logo-img"></div>
+            </div>
+            <!-- Titre de la modale -->
+            <div class="modal-title">Sukumanga</div>
+            <!-- Sous-titre de la modale -->
             <div class="modal-subtitle">Inscrivez-vous a notre site</div>
+            <!-- Formulaire d'inscription -->
             <form>
+                <!-- Champ nom d'utilisateur -->
                 <div class="form-group">
                     <input type="text" placeholder="👤 Nom d'utilisateur">
                 </div>
+                <!-- Champ email -->
                 <div class="form-group">
                     <input type="email" placeholder="📧 Entrez votre Email">
                 </div>
+                <!-- Champ mot de passe -->
                 <div class="form-group">
                     <input type="password" placeholder="🔒 Mot de passe">
                 </div>
+                <!-- Champ confirmation du mot de passe -->
                 <div class="form-group">
                     <input type="password" placeholder="🔒 Confirmer le Mot de passe">
                 </div>
+                <!-- Bouton de soumission du formulaire -->
                 <button type="button" class="submit-btn" onclick="closeModal()">Inscription</button>
             </form>
+            <!-- Lien pour basculer vers la connexion -->
             <div class="switch-form">
                 Deja membre? <a href="#" onclick="switchToLogin()">Connecter-vous!</a>
             </div>
